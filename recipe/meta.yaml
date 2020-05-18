@@ -11,7 +11,7 @@ source:
 
 build:
   skip: true  # [win]
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
@@ -23,7 +23,7 @@ requirements:
     - python >=3
     - numpy
     - pandas
-    - matplotlib
+    - matplotlib-base
     - networkx
     - scikit-learn
 
