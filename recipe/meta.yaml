@@ -11,19 +11,19 @@ source:
 
 build:
   skip: true  # [win]
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
   host:
-    - python >=3
+    - python 
     - pip
 
   run:
-    - python >=3
+    - python 
     - numpy
     - pandas
-    - matplotlib
+    - matplotlib-base
     - networkx
     - scikit-learn
 
