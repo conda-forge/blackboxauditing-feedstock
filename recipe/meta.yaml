@@ -20,7 +20,7 @@ requirements:
     - pip
 
   run:
-    - python >=3
+    - python
     - numpy
     - pandas
     - matplotlib-base
