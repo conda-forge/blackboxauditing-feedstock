@@ -10,20 +10,20 @@ source:
   sha256: 02824682f4ac3a89e606d3dc7e99481d09e82655513511e9406268f8b17be3d6 
 
 build:
-  skip: true  # [win]
-  number: 0
+  noarch: python
+  number: 1
   script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
   host:
-    - python >=3
+    - python >=3.6
     - pip
 
   run:
-    - python >=3
+    - python >=3.6
     - numpy
     - pandas
-    - matplotlib
+    - matplotlib-base
     - networkx
     - scikit-learn
 
