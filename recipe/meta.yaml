@@ -6,21 +6,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 02824682f4ac3a89e606d3dc7e99481d09e82655513511e9406268f8b17be3d6 
 
 build:
   noarch: python
-  number: 1
+  number: 2
   script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
 
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - numpy
     - pandas
     - matplotlib-base
@@ -28,6 +28,8 @@ requirements:
     - scikit-learn
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - BlackBoxAuditing
 
